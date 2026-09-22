@@ -1,4 +1,4 @@
-# HandleBar Bluetooth Media Controller
+# Handle Bar Bluetooth Media Controller
 
 Bluetooth media control buttons for motorbike handlebars.
 This is a project that turns an esp32 into media control buttons for a motorcycle (or anything else). It is paired with your pone or gps or what ever and it sends media control keys.
