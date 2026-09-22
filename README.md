@@ -1,12 +1,40 @@
 # HandleBar Bluetooth Media Controller
 
-Bluetooth media control buttons for KTM 1290 handlebars.
+Bluetooth media control buttons for motorbike handlebars.
+This is a project that turns an esp32 into media control buttons for a motorcycle (or anything else). It is paired with your pone or gps or what ever and it sends media control keys.
 
 ## Hardware
 
 - ESP32 Dev Module
-- 3 push buttons
+- 5 push buttons
 - KTM 1290 handlebar mount
+
+## ESP32 connection
+
+The buttons are connected directly to the XIAO ESP32-C3 GPIO pins. The ESP32-C3 communicates with the paired phone wirelessly over BLE.
+
+       Physical Buttons
+              │
+              ▼
+     ┌─────────────────┐
+     │ XIAO ESP32-C3   │
+     │                 │
+     │ D0 ─ Previous   │
+     │ D1 ─ Volume -   │
+     │ D2 ─ Next       │
+     │ D3 ─ Play/Pause │
+     │ D4 ─ Volume +   │
+     └────────┬────────┘
+              │
+             BLE
+              │
+              ▼
+        ┌───────────┐
+        │   Phone   │
+        │  Media    │
+        │  Player   │
+        └───────────┘
+
 
 ## Arduino IDE
 
