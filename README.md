@@ -1,1 +1,87 @@
-ESP32C Bluetooth Media Button Block for my Mototrbike
+# HandleBar Bluetooth Media Controller
+
+Bluetooth media control buttons for KTM 1290 handlebars.
+
+## Hardware
+
+- ESP32 Dev Module
+- 3 push buttons
+- KTM 1290 handlebar mount
+
+## Arduino IDE
+
+Tested with:
+
+- Arduino IDE 2.3.6
+- esp32 board package 3.2.1
+
+## Board Configuration
+
+Board:
+
+    ESP32 Dev Module
+
+Tools settings:
+
+- USB CDC On Boot: Enabled
+- CPU Frequency: 240MHz
+- Flash Frequency: 80MHz
+- Flash Mode: QIO
+- Flash Size: 4MB
+- Partition Scheme: Default
+
+## Libraries
+
+Install the following library using the Arduino Library Manager:
+
+- NimBLE-Arduino 1.4.1
+
+Library URL:
+
+    https://github.com/h2zero/NimBLE-Arduino
+
+## Project Structure
+
+```text
+HandleBarBluetoothMedia/
+├── README.md
+├── firmware/
+│   └── bt_media_buttons.ino
+├── hardware/
+│   └── KTM 1290 BT Buttons.stl
+└── docs/
+    └── bt_media_buttons.jpg
+```
+
+## Build
+
+1. Install the ESP32 board package version 3.2.1.
+2. Install NimBLE-Arduino version 1.4.1.
+3. Open:
+
+       firmware/bt_media_buttons.ino
+
+4. Select:
+
+       Tools → Board → ESP32 Dev Module
+
+5. Compile and upload to the ESP32.
+
+## Alternative CLI
+
+arduino-cli lib install "HijelHID_BLEKeyboard"
+arduino-cli lib install "NimBLE-Arduino"
+arduino-cli compile --fqbn esp32:esp32:XIAO_ESP32C3 .
+arduino-cli upload -p /dev/ttyACM0 --fqbn esp32:esp32:XIAO_ESP32C3 .
+
+## Notes
+
+This project was developed and tested with:
+
+- Arduino IDE 2.3.6
+- esp32 by Espressif Systems 3.2.1
+- NimBLE-Arduino 1.4.1
+
+Future versions of the ESP32 board package or NimBLE-Arduino library may require code changes.
+
+
